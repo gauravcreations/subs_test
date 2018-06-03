@@ -14,16 +14,13 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/saySub", function(req, res) {
-  var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.echoText
-      ? req.body.result.parameters.echoText
-      : "Seems like some problem. Speak again.";
-  return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "subs_test"
+  var userName = req.body.result.parameters.echoText
+  var webhookReply = 'Hello ' + userName + '! Welcome from the webhook.'
+
+  return res.status(200).json({
+    source: 'subs_test',
+    speech: webhookReply,
+    displayText: webhookReply
   });
 });
 
