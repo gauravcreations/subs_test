@@ -16,18 +16,7 @@ restService.use(bodyParser.json());
 restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
 
- var options = {
-  host: "www.google.com",
-  port: 80,
-  path: "/index.html"
-};
 
-http.get(options, function(res) {
-  
-}).on('error', function(e) {
-  
-});
-  
 let response = "This is a sample response from your webhook!";
 let responseObj={
      "fulfillmentText":response
