@@ -11,17 +11,6 @@ restService.use(
   })
 );
 
-var options = {
-  host: "www.google.com",
-  port: 80,
-  path: "/index.html"
-};
-  
- http.get(options, function(res) {
-  
-}).on('error', function(e) {
-  
-});
 
 restService.use(bodyParser.json());
 
