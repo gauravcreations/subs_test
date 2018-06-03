@@ -19,8 +19,8 @@ restService.post("/saySub", function(req, res) {
 
   return res.json({
     
-    speech: webhookReply,
-    displayText: webhookReply,
+    fulfillmentText: webhookReply,
+    fulfillmentMessages: webhookReply,
     source: 'subs_test'
   });
 });
