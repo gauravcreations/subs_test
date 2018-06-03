@@ -14,15 +14,25 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/saySub", function(req, res) {
- 
-  var webhookReply = 'Welcome from the webhook.'
+ var webhookReply = 'Welcome from the webhook.'
+  
+  let response = "This is a sample response from your webhook!";//Default response from the webhook to show it’s working
+let responseObj={
+     "fulfillmentText":webhookReply
+    ,"fulfillmentMessages":[
+        {
+            "text": {
+                "text": [
+                    "Hello I m Responding to intent"
+                ]
+            }
+        }
+    ]
+    ,"source":"subs_test"
+}
+return res.json(responseObj);
+});
 
-  return res.json({
-    
-    fulfillmentText: webhookReply,
-    fulfillmentMessages: webhookReply,
-    source: 'subs_test'
-  });
 });
 
 
