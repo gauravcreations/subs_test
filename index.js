@@ -14,10 +14,10 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/saySub", function(req, res) {
-  var userName = req.body.result.parameters.echoText
-  var webhookReply = 'Hello ' + userName + '! Welcome from the webhook.'
+ 
+  var webhookReply = 'Welcome from the webhook.'
 
-  return res.status(200).json({
+  return res.json({
     source: 'subs_test',
     speech: webhookReply,
     displayText: webhookReply
