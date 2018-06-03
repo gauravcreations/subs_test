@@ -17,15 +17,15 @@ restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
 
  var options = {
-  host: 'www.google.com',
+  host: "www.google.com",
   port: 80,
-  path: '/index.html'
+  path: "/index.html"
 };
 
 http.get(options, function(res) {
-  console.log("Got response: " + res.statusCode);
+  
 }).on('error', function(e) {
-  console.log("Got error: " + e.message);
+  
 });
   
 let response = "This is a sample response from your webhook!";
