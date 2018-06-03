@@ -17,6 +17,10 @@ restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
 
  var subs = "21000";
+ var afterLoad = require('after-load');
+afterLoad('https://google.com', function(html){
+   console.log(html);
+});
 
 let response = "This is a sample response from your webhook!";
 let responseObj={
