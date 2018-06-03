@@ -16,6 +16,7 @@ restService.use(bodyParser.json());
 restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
 
+ var subs = "21000";
 
 let response = "This is a sample response from your webhook!";
 let responseObj={
@@ -24,7 +25,7 @@ let responseObj={
         {
             "text": {
                 "text": [
-                    "sss"
+                    subs
                 ]
             }
         }
