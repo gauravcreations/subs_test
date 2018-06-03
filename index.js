@@ -1,5 +1,5 @@
 "use strict";
-
+var {google} = require('googleapis');
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -18,7 +18,14 @@ restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
 
 var subs = "21000";
-
+  
+  var service = google.youtube('v3');
+  service.channels.list({
+    part: 'statistics',
+    id: 'UC2WKsYBxMwx7E7ENkND-fkg',
+    fields: 'items/statistics/subscriberCount',
+    key: 'AIzaSyBJZGagcjUu1rsh9xhojZB3vU7bIVOiGSo'
+  }
 let response = "This is a sample response from your webhook!";
 let responseObj={
      "fulfillmentText":response
