@@ -17,7 +17,7 @@ restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
 
   
-  let response = "This is a sample response from your webhook!";
+let response = "This is a sample response from your webhook!";
 let responseObj={
      "fulfillmentText":response
     ,"fulfillmentMessages":[
@@ -32,7 +32,6 @@ let responseObj={
     ,"source":"subs_test"
 }
 return res.json(responseObj);
-});
 
 });
 
