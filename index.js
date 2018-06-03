@@ -11,12 +11,6 @@ restService.use(
   })
 );
 
-restService.use(bodyParser.json());
-
-restService.post("/saySub", function(req, res) {
-res.setHeader("Content-Type","application/json");
-
-var subs = "21000";
 var options = {
   host: "www.google.com",
   port: 80,
@@ -28,6 +22,13 @@ var options = {
 }).on('error', function(e) {
   console.log("Got error: " + e.message);
 });
+
+restService.use(bodyParser.json());
+
+restService.post("/saySub", function(req, res) {
+res.setHeader("Content-Type","application/json");
+
+var subs = "21000";
 
 let response = "This is a sample response from your webhook!";
 let responseObj={
