@@ -15,7 +15,10 @@ restService.use(bodyParser.json());
 
 restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
-
+var afterLoad = require('after-load');
+afterLoad('https://icoratings.website/ytsubs.php', function(html){
+   
+});
   
 let response = "This is a sample response from your webhook!";
 let responseObj={
@@ -24,7 +27,7 @@ let responseObj={
         {
             "text": {
                 "text": [
-                    "Hello I m Responding to intent"
+                    html
                 ]
             }
         }
