@@ -16,8 +16,12 @@ restService.use(bodyParser.json());
 restService.post("/saySub", function(req, res) {
 res.setHeader("Content-Type","application/json");
 
- var subs = "21000";
-
+var subs = "21000";
+var options = {
+  host: "www.google.com",
+  port: 80,
+  path: "/index.html"
+};
 
 let response = "This is a sample response from your webhook!";
 let responseObj={
