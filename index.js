@@ -18,9 +18,10 @@ restService.post("/saySub", function(req, res) {
   var webhookReply = 'Welcome from the webhook.'
 
   return res.json({
-    source: 'subs_test',
+    
     speech: webhookReply,
-    displayText: webhookReply
+    displayText: webhookReply,
+    source: 'subs_test'
   });
 });
 
