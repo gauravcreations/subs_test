@@ -23,7 +23,7 @@ restService.post("/saySub", function(req, res) {
   return res.json({
     speech: speech,
     displayText: speech,
-    source: "webhook-echo-sample"
+    source: "subs_test"
   });
 });
 
